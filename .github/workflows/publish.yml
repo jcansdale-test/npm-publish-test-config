@@ -14,10 +14,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v3
         with:
-          scope: '@${{ github.repository_owner }}'
+          node-version: '16.x'
           registry-url: 'https://registry.npmjs.org/'
+          always-auth: true
+          scope: '@jcansdale-test'
 
       - name: Create a package called @${{ github.repository }}
         run: npm init --scope ${{ github.repository_owner }} -y
