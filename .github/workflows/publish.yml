@@ -16,7 +16,7 @@ jobs:
 
       - uses: actions/setup-node@v1
         with:
-          scope: ${{ github.repository_owner }}
+          scope: '@${{ github.repository_owner }}'
           registry-url: https://npm.pkg.github.com/
 
       - name: Create a package called @${{ github.repository }}
